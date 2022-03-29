@@ -14,18 +14,18 @@ build:
 outputs:
   - name: python-wasmer
     version: {{ version }}
-    script: build_wasmer.sh       # [unix]
-    script: build_wasmer.bat      # [win]
+    script: build_wasmer.sh  # [unix]
+    script: build_wasmer.bat  # [win]
     build:
       run_exports:
         - python-wasmer
     requirements:
       build:
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - {{ compiler('rust') }}
-      - sysroot_linux-64 2.17  # [linux64]
-      - cargo-bundle-licenses
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('rust') }}
+        - sysroot_linux-64 2.17 # [linux64]
+        - cargo-bundle-licenses
 
       host:
         - python >=3.8
@@ -45,20 +45,20 @@ outputs:
 
   - name: python-wasmer-compiler-cranelift
     version: {{ version }}
-    script: build_wasmer.sh       # [unix]
-    script: build_wasmer.bat      # [win]
+    script: build_wasmer.sh  # [unix]
+    script: build_wasmer.bat  # [win]
 
     requirements:
       build:
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - {{ compiler('rust') }}
-      - cargo-bundle-licenses
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('rust') }}
+        - cargo-bundle-licenses
 
       host:
         - python >=3.8
         - pip
-        - maturin   
+        - maturin
         - pytest
         - pytest-benchmark
         - python-wasmer
@@ -73,19 +73,19 @@ outputs:
 
   - name: python-wasmer-compiler-singlepass
     version: {{ version }}
-    script: build_wasmer.sh       # [unix]
+    script: build_wasmer.sh  # [unix]
 
     build:
       skip: true  # [win]
 
     requirements:
       build:
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - {{ compiler('rust') }}
-      - cargo-bundle-licenses
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('rust') }}
+        - cargo-bundle-licenses
 
-      
+
       host:
         - python >=3.8
         - pip
@@ -97,23 +97,23 @@ outputs:
         - python-wasmer
 
     test:
-        imports:
-          - wasmer_compiler_singlepass  # [unix]
+      imports:
+        - wasmer_compiler_singlepass    # [unix]
 
 
   - name: python-wasmer-compiler-llvm
     version: {{ version }}
-    script: build_wasmer.sh       # [unix]
+    script: build_wasmer.sh  # [unix]
 
     build:
       skip: true  # [win]
 
     requirements:
       build:
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - {{ compiler('rust') }}
-      - cargo-bundle-licenses
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('rust') }}
+        - cargo-bundle-licenses
 
       host:
         - python >=3.8
@@ -134,8 +134,8 @@ outputs:
         - python-wasmer
 
     test:
-        imports:
-          - wasmer_compiler_llvm   # [unix]
+      imports:
+        - wasmer_compiler_llvm     # [unix]
 
 
 about:
@@ -143,7 +143,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'WebAssembly runtime for Python'
+  summary: WebAssembly runtime for Python
   doc_url: https://docs.wasmer.io
   dev_url: https://github.com/wasmerio/wasmer
 
