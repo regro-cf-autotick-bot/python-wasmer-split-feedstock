@@ -98,7 +98,7 @@ outputs:
 
     test:
       imports:
-        - wasmer_compiler_singlepass    # [unix]
+        - wasmer_compiler_singlepass  # [unix]
 
 
   - name: python-wasmer-compiler-llvm
@@ -135,7 +135,7 @@ outputs:
 
     test:
       imports:
-        - wasmer_compiler_llvm     # [unix]
+        - wasmer_compiler_llvm  # [unix]
 
 
 about:
