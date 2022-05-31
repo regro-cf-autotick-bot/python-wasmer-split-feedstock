@@ -184,5 +184,6 @@ Feedstock Maintainers
 =====================
 
 * [@atrawog](https://github.com/atrawog/)
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@wolfv](https://github.com/wolfv/)
 
