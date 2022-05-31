@@ -9,20 +9,7 @@ source:
 
 build:
   number: 0
-
-# force rendering of all pythons
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('rust') }}
-    - sysroot_linux-64 2.17 # [linux64]
-    - cargo-bundle-licenses
-
-  host:
-    - python >=3.8
-    - pip
-    - maturin
+  skip: true  # [py<38]
 
 outputs:
   - name: python-wasmer
@@ -41,14 +28,14 @@ outputs:
         - cargo-bundle-licenses
 
       host:
-        - python >=3.8
+        - python
         - pip
         - maturin
         - lld
         - pytest
 
       run:
-        - python >=3.8
+        - python
         - lld
 
     test:
@@ -69,7 +56,7 @@ outputs:
         - cargo-bundle-licenses
 
       host:
-        - python >=3.8
+        - python
         - pip
         - maturin
         - pytest
@@ -100,7 +87,7 @@ outputs:
 
 
       host:
-        - python >=3.8
+        - python
         - pip
         - maturin
         - pytest
@@ -129,7 +116,7 @@ outputs:
         - cargo-bundle-licenses
 
       host:
-        - python >=3.8
+        - python
         - pip
         - maturin
         - pytest
