@@ -8,7 +8,7 @@ source:
     sha256: 220af5b2675480daea4ebc1cede45728ce1b270cdc141ebff08ef0870cc23cfd
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
 
 outputs:
@@ -65,6 +65,7 @@ outputs:
 
       run:
         - python-wasmer
+        - python
 
     test:
       imports:
@@ -95,6 +96,7 @@ outputs:
 
       run:
         - python-wasmer
+        - python
 
     test:
       imports:
@@ -132,6 +134,7 @@ outputs:
         - libffi
         - libstdcxx-ng  # [linux64]
         - python-wasmer
+        - python
 
     test:
       imports:
