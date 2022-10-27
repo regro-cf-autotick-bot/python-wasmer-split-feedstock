@@ -8,7 +8,7 @@ source:
     sha256: 220af5b2675480daea4ebc1cede45728ce1b270cdc141ebff08ef0870cc23cfd
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<38]
 
 outputs:
