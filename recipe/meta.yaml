@@ -115,6 +115,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
+        - llvm >=12,<14  # [linux64]
         - cargo-bundle-licenses
 
       host:
