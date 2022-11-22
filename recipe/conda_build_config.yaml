@@ -1,5 +1,0 @@
-# avoid error "undefined symbol: LLVMAddLoopUnswitchPass"
-c_compiler_version:         # [unix]
-  - 13                      # [unix]
-cxx_compiler_version:       # [unix]
-  - 13                      # [unix]
