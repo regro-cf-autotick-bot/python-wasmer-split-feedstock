@@ -125,7 +125,7 @@ outputs:
         - pytest
         - pytest-benchmark
         - clang
-        - llvmdev {{ llvm_version}}.*
+        - llvmdev {{ llvm_version }}.*
         - python-wasmer
         - python-wasmer-compiler-cranelift
 
