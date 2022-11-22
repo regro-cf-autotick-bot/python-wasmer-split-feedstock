@@ -1,4 +1,5 @@
 {% set version = "1.1.0" %}
+{% set llvm_version = 13 %}
 
 package:
   name: python-wasmer-split
@@ -8,7 +9,7 @@ source:
     sha256: 220af5b2675480daea4ebc1cede45728ce1b270cdc141ebff08ef0870cc23cfd
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<38]
 
 outputs:
@@ -124,7 +125,7 @@ outputs:
         - pytest
         - pytest-benchmark
         - clang
-        - llvmdev
+        - llvmdev {{ llvm_version }}.*
         - python-wasmer
         - python-wasmer-compiler-cranelift
 
@@ -132,6 +133,7 @@ outputs:
         - clang
         - libzlib
         - libffi
+        - libllvm{{ llvm_version }}
         - libstdcxx-ng  # [linux64]
         - python-wasmer
         - python
