@@ -1,4 +1,6 @@
 {% set version = "1.1.0" %}
+# technically supports >=12,<14
+{% set llvm_version = "13" %}
 
 package:
   name: python-wasmer-split
@@ -115,7 +117,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
-        - llvm >=12,<14  # [linux64]
+        - llvm {{ llvm_version }}.*
         - cargo-bundle-licenses
 
       host:
@@ -133,6 +135,7 @@ outputs:
         - clang
         - libzlib
         - libffi
+        - libllvm{{ llvm_version }}
         - libstdcxx-ng  # [linux64]
         - python-wasmer
         - python
