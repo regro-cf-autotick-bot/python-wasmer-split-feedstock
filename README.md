@@ -1,11 +1,11 @@
-About python-wasmer-split
-=========================
+About python-wasmer-split-feedstock
+===================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-wasmer-split-feedstock/blob/main/LICENSE.txt)
 
 Home: https://wasmer.io
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-wasmer-split-feedstock/blob/main/LICENSE.txt)
 
 Summary: WebAssembly runtime for Python
 
