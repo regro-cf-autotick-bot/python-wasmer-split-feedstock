@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 {% set llvm_version = 13 %}
 
 package:
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://github.com/wasmerio/wasmer-python/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 220af5b2675480daea4ebc1cede45728ce1b270cdc141ebff08ef0870cc23cfd
+    sha256: 8e32674dfe679e3bec1228eeb514f78b40b6fb8d8655a69765b405cbfe9c8682
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<38]
 
 outputs:
