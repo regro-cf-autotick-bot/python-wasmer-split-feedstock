@@ -65,6 +65,7 @@ outputs:
         - pytest
         - pytest-benchmark
         - python-wasmer
+        - zlib
 
       run:
         - python-wasmer
@@ -96,6 +97,7 @@ outputs:
         - maturin
         - pytest
         - python-wasmer
+        - zlib
 
       run:
         - python-wasmer
@@ -130,6 +132,7 @@ outputs:
         - llvmdev {{ llvm_version }}.*
         - python-wasmer
         - python-wasmer-compiler-cranelift
+        - zlib
 
       run:
         - clang
