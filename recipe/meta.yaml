@@ -29,35 +29,30 @@ outputs:
         - {{ compiler('rust') }}
         - sysroot_linux-64 2.17  # [linux64]
         - cargo-bundle-licenses
-
       host:
         - python
         - pip
         - maturin
         - lld
         - pytest
-
+        - zlib  # [linux]
       run:
         - python
         - lld
-
     test:
       imports:
         - wasmer
-
 
   - name: python-wasmer-compiler-cranelift
     version: {{ version }}
     script: build_wasmer.sh  # [unix]
     script: build_wasmer.bat  # [win]
-
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
-
       host:
         - python
         - pip
@@ -65,63 +60,48 @@ outputs:
         - pytest
         - pytest-benchmark
         - python-wasmer
-        - zlib
-
       run:
         - python-wasmer
         - python
-
     test:
       imports:
         - wasmer_compiler_cranelift
 
-
   - name: python-wasmer-compiler-singlepass
     version: {{ version }}
     script: build_wasmer.sh  # [unix]
-
     build:
       skip: true  # [win]
-
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
-
-
       host:
         - python
         - pip
         - maturin
         - pytest
         - python-wasmer
-        - zlib
-
       run:
         - python-wasmer
         - python
-
     test:
       imports:
         - wasmer_compiler_singlepass  # [unix]
 
-
   - name: python-wasmer-compiler-llvm
     version: {{ version }}
     script: build_wasmer.sh  # [unix]
-
     build:
       skip: true  # [win]
-
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
-
       host:
         - python
         - pip
@@ -132,21 +112,16 @@ outputs:
         - llvmdev {{ llvm_version }}.*
         - python-wasmer
         - python-wasmer-compiler-cranelift
-        - zlib
-
       run:
         - clang
-        - libzlib
         - libffi
         - libllvm{{ llvm_version }}
         - libstdcxx-ng  # [linux64]
         - python-wasmer
         - python
-
     test:
       imports:
         - wasmer_compiler_llvm  # [unix]
-
 
 about:
   home: https://wasmer.io
