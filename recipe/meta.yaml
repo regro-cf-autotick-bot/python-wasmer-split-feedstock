@@ -112,6 +112,7 @@ outputs:
         - llvmdev {{ llvm_version }}.*
         - python-wasmer
         - python-wasmer-compiler-cranelift
+        - zlib  # [linux]
       run:
         - clang
         - libffi
