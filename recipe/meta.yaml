@@ -3,6 +3,7 @@
 
 package:
   name: python-wasmer-split
+  version: {{ version }}
 
 source:
   url: https://github.com/wasmerio/wasmer-python/archive/refs/tags/{{ version }}.tar.gz
