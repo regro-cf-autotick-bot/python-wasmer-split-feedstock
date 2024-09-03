@@ -11,7 +11,7 @@ source:
     - 0000-deprecated-maturin-metadata.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
 
 outputs:
@@ -25,9 +25,9 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
-        - sysroot_linux-64 2.17  # [linux64]
         - cargo-bundle-licenses
       host:
         - python
@@ -50,6 +50,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
@@ -75,6 +76,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
@@ -99,6 +101,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - {{ compiler('rust') }}
         - cargo-bundle-licenses
