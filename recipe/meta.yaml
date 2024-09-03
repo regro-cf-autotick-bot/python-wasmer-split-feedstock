@@ -119,7 +119,6 @@ outputs:
         - clang
         - libffi
         - libllvm{{ llvm_version }}
-        - libstdcxx-ng  # [linux64]
         - python-wasmer
         - python
     test:
